@@ -1,0 +1,62 @@
+{
+	"name": "HttpBin.org Service",
+	"apiVersion": "1",
+	"baseUrl": "http://httpbin.org/",
+	"description": "A simple service defenition for httpbin.org",
+
+
+	"operations": {
+
+		"getIP": {
+			"httpMethod": "GET",
+			"uri": "/ip",
+			"responseModel": "getIPResponse",
+			"parameters": {}
+		},
+
+		"getGETData": {
+			"httpMethod": "GET",
+			"uri": "/get",
+			"responseModel": "getGETDataResponse",
+
+			"parameters": {
+				"foo": {
+					"type": "string",
+					"location": "query",
+					"required": true
+				},
+				"bar": {
+					"type": "string",
+					"location": "query",
+					"required": true
+				}
+			},
+
+			"additionalParameters": {
+				"location": "query"
+			}
+		}
+
+	},
+
+	"models": {
+
+		"getIPResponse": {
+			"type": "object",
+			"properties": {
+				"origin": {
+					"location": "json",
+					"type": "string"
+				}
+			}
+		},
+
+		"getGETDataResponse": {
+			"type": "object",
+			"additionalProperties": {
+				"location": "json"
+			}
+		}
+
+	}
+}
