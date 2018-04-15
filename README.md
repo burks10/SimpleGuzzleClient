@@ -2,7 +2,7 @@ My first attempt at using guzzle to ingest an API - httpbin.org in this case.
 
 Quickstart Guide
 ---
-`cd Guzzle`
+`cd SimpleGuzzleClient`
 
 `composer install`
 
